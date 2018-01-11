@@ -8,9 +8,14 @@ import static com.youbc.generated.schema.tables.RoommatesProfile.ROOMMATES_PROFI
 import static com.youbc.generated.schema.tables.ClassmatesProfile.CLASSMATES_PROFILE;
 import static com.youbc.generated.schema.tables.FriendsProfile.FRIENDS_PROFILE;
 
+import org.jooq.Record;
 import org.jooq.Record1;
 import org.jooq.Result;
 import org.jooq.impl.DSL;
+import org.jooq.tools.json.JSONArray;
+import org.jooq.tools.json.JSONObject;
+import org.jooq.tools.json.JSONParser;
+import org.jooq.tools.json.ParseException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -22,6 +27,13 @@ public class UserDAO {
     @Autowired
     public UserDAO(DSLContext dslContext) {
         this.dslContext = dslContext;
+    }
+
+    public JSONArray getAllUsers() {
+        JSONArray result = new JSONArray();
+        System.out.println(dslContext.select().from(USER).fetch().intoMaps());
+        result.addAll(dslContext.select().from(USER).fetch().intoMaps());
+        return result;
     }
 
     public boolean userExists(String userID) {
