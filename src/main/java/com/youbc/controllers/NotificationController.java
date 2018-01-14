@@ -24,9 +24,4 @@ public class NotificationController {
         this.userDAO = userDAO;
     }
 
-    @RequestMapping(value = Endpoints.CHECK_MUTUAL_LIKE, method = RequestMethod.GET)
-    public JSONArray checkMutualLike() throws IOException {
-        return userDAO.getAllUsers();
-    }
-
 }

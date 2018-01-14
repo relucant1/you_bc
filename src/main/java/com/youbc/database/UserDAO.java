@@ -28,13 +28,13 @@ public class UserDAO {
     public UserDAO(DSLContext dslContext) {
         this.dslContext = dslContext;
     }
-
-    public JSONArray getAllUsers() {
-        JSONArray result = new JSONArray();
-        System.out.println(dslContext.select().from(USER).fetch().intoMaps());
-        result.addAll(dslContext.select().from(USER).fetch().intoMaps());
-        return result;
-    }
+//
+//    public JSONArray getAllUsers() {
+//        JSONArray result = new JSONArray();
+//        System.out.println(dslContext.select().from(USER).fetch().intoMaps());
+//        result.addAll(dslContext.select().from(USER).fetch().intoMaps());
+//        return result;
+//    }
 
     public boolean userExists(String userID) {
         Result<Record1<String>> result = dslContext
