@@ -1,11 +1,16 @@
-import {RECEIVE_VERIFICATION, UPDATE_EMAIL, UPDATE_STUDENT_CARD, VERIFY_LOCATION} from "../../actions/actionTypes";
+import {
+    RECEIVE_VERIFICATION, SWITCH_VERIFICATION_METHOD, UPDATE_EMAIL, UPDATE_STUDENT_CARD,
+    VERIFY_LOCATION
+} from "../../actions/actionTypes";
 
 const initial = {
     isLocationVerified: false,
     isStudentCardVerified: false,
     studentCardUrl: '',
     isEmailVerified: false,
-    email: ''
+    email: '',
+    pending: 'none', // one of ['none', 'email', 'card']; so that we know what the status is
+    using: 'location', // one of ['location', 'email', 'card']; so that we know which verification method to use
 };
 
 const verification = (state = initial, action) => {
@@ -18,6 +23,8 @@ const verification = (state = initial, action) => {
             return {...state, ...action.email};
         case VERIFY_LOCATION:
             return {...state, isLocationVerified: true};
+        case SWITCH_VERIFICATION_METHOD:
+            return {...state, using: action.method};
         default:
             return state;
     }
