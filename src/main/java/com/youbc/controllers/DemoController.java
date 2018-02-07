@@ -5,23 +5,37 @@ import com.youbc.database.UserDAO;
 import com.youbc.error_handling.YouBCError;
 import com.youbc.error_handling.YouBCException;
 import com.youbc.services.aws.S3Client;
+import com.youbc.services.notification.NotificationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
+import java.util.Collections;
 
 @RestController
 public class DemoController {
     private UserDAO userDAO;
     private S3Client s3Client;
+    private NotificationService notificationService;
 
 
     @Autowired
-    public DemoController(UserDAO userDAO, S3Client s3Client) {
+    public DemoController(UserDAO userDAO, S3Client s3Client, NotificationService notificationService) {
         this.userDAO = userDAO;
         this.s3Client = s3Client;
+        this.notificationService = notificationService;
+    }
+
+    @RequestMapping(path = "/notify", method = RequestMethod.GET)
+    public String triggerNotification() {
+
+        notificationService.triggerNotification(
+                "my-channel", "my-event", Collections.singletonMap("message", "hello world")
+        );
+
+        return "demo notification";
     }
 
     @RequestMapping(path = "/demoJooq", method = RequestMethod.GET)

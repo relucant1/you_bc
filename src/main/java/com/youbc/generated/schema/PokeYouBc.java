@@ -18,6 +18,7 @@ import com.youbc.generated.schema.tables.FriendsLikes;
 import com.youbc.generated.schema.tables.FriendsProfile;
 import com.youbc.generated.schema.tables.FriendsProfileTags;
 import com.youbc.generated.schema.tables.FriendsTags;
+import com.youbc.generated.schema.tables.PendingNotification;
 import com.youbc.generated.schema.tables.ProfileImage;
 import com.youbc.generated.schema.tables.RelationshipStatus;
 import com.youbc.generated.schema.tables.RoommatesDislikes;
@@ -55,7 +56,7 @@ import org.jooq.impl.SchemaImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class PokeYouBc extends SchemaImpl {
 
-    private static final long serialVersionUID = 1540080158;
+    private static final long serialVersionUID = 1397388286;
 
     /**
      * The reference instance of <code>poke_you_bc</code>
@@ -131,6 +132,11 @@ public class PokeYouBc extends SchemaImpl {
      * The table <code>poke_you_bc.friends_tags</code>.
      */
     public final FriendsTags FRIENDS_TAGS = com.youbc.generated.schema.tables.FriendsTags.FRIENDS_TAGS;
+
+    /**
+     * The table <code>poke_you_bc.pending_notification</code>.
+     */
+    public final PendingNotification PENDING_NOTIFICATION = com.youbc.generated.schema.tables.PendingNotification.PENDING_NOTIFICATION;
 
     /**
      * The table <code>poke_you_bc.profile_image</code>.
@@ -231,6 +237,7 @@ public class PokeYouBc extends SchemaImpl {
             FriendsProfile.FRIENDS_PROFILE,
             FriendsProfileTags.FRIENDS_PROFILE_TAGS,
             FriendsTags.FRIENDS_TAGS,
+            PendingNotification.PENDING_NOTIFICATION,
             ProfileImage.PROFILE_IMAGE,
             RelationshipStatus.RELATIONSHIP_STATUS,
             RoommatesDislikes.ROOMMATES_DISLIKES,

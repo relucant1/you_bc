@@ -1,3 +1,7 @@
+# notification tables
+DROP TABLE pending_notification;
+
+# basic tables
 DROP TABLE friends_dislikes;
 DROP TABLE friends_likes;
 DROP TABLE classmates_dislikes;

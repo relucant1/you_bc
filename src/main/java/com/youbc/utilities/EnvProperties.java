@@ -21,4 +21,11 @@ public class EnvProperties {
     //WeChat
     public static String WECHAT_APPID = "wechat.appid";
     public static String WECHAT_SECRET = "wechat.secret";
+
+    //notification
+    public static String PUSHER_APPID = "pusher.appid";
+    public static String PUSHER_KEY = "pusher.key";
+    public static String PUSHER_SECRET = "pusher.secret";
+    public static String PUSHER_CLUSTER = "pusher.cluster";
+    public static String PUSHER_ENCRYPTED = "pusher.encrypted";
 }

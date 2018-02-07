@@ -76,6 +76,9 @@ dependencies {
     compile('org.apache.httpcomponents:httpmime:4.5.4')
     compile('org.apache.httpcomponents:fluent-hc:4.5.4')
 
+    // pusher notification
+    compile('com.pusher:pusher-http-java:1.0.0')
+
 }
 
 jooq {

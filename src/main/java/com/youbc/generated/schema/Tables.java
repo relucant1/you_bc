@@ -18,6 +18,7 @@ import com.youbc.generated.schema.tables.FriendsLikes;
 import com.youbc.generated.schema.tables.FriendsProfile;
 import com.youbc.generated.schema.tables.FriendsProfileTags;
 import com.youbc.generated.schema.tables.FriendsTags;
+import com.youbc.generated.schema.tables.PendingNotification;
 import com.youbc.generated.schema.tables.ProfileImage;
 import com.youbc.generated.schema.tables.RelationshipStatus;
 import com.youbc.generated.schema.tables.RoommatesDislikes;
@@ -116,6 +117,11 @@ public class Tables {
      * The table <code>poke_you_bc.friends_tags</code>.
      */
     public static final FriendsTags FRIENDS_TAGS = com.youbc.generated.schema.tables.FriendsTags.FRIENDS_TAGS;
+
+    /**
+     * The table <code>poke_you_bc.pending_notification</code>.
+     */
+    public static final PendingNotification PENDING_NOTIFICATION = com.youbc.generated.schema.tables.PendingNotification.PENDING_NOTIFICATION;
 
     /**
      * The table <code>poke_you_bc.profile_image</code>.
